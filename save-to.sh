@@ -179,7 +179,6 @@ if git rev-parse --git-dir &>/dev/null; then
 
 		# Remove the temporary directory after completing the operation
 		rm -rf $TempRepo || { echo -e "${RED}Failed to remove temporary directory $TempRepo.${RESET}"; exit 1; }
-		break
 	fi
 
 else
