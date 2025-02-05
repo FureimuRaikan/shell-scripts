@@ -115,8 +115,10 @@ if git rev-parse --git-dir &>/dev/null; then
 	# If a repository name is provided as an argument
 	else
 		# Keep asking for a valid repository name if the provided one doesn't exist
-		while ! echo "$RepoList" | grep -w -q "$1"; do
-			echo -e "${RED}'$1' doesn't exist.\n${YELLOW}Existing repositories:\n${BLUE}$RepoList${RESET}"
+		input=$1
+		
+		while ! echo "$RepoList" | grep -w -q "$input"; do
+			echo -e "${RED}'$input' doesn't exist.\n${YELLOW}Existing repositories:\n${BLUE}$RepoList${RESET}"
 			printf "Repository to save to : "
 			read input
 
